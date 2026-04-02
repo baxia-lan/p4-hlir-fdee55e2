@@ -1,0 +1,17 @@
+"""
+P4 High-Level Intermediate Representation — BUILD.bazel added on claude branch.
+
+Migration status: Phase 1 Bazel migration.
+Build type: Python (third-party) — wrapped for use as Bazel dep
+"""
+
+load("@rules_python//python:defs.bzl", "py_library")
+
+package(default_visibility = ["//visibility:public"])
+
+py_library(
+    name = "p4-hlir",
+    srcs = glob(["**/*.py"], exclude = [".git/**", "**/*_test.py"]),
+    visibility = ["//visibility:public"],
+)
+
